@@ -4,7 +4,7 @@
 - 启用或关闭 Windows 功能中安装 ”Hyper-V“、"适用于 Linux 的 Windows 子系统"、”虚拟机平台“，点击确定下载后重启
 
 ## 安装wsl
-```
+``` cmd
 wsl --update
 wsl --set-default-version 2
 ```
@@ -14,7 +14,7 @@ wsl --set-default-version 2
 - 不使用wsl2引擎（会报错）
 - Docker Desktop中设置```General->Expose daemon on tcp://localhost:2375 without TLS```
 ## 配置wsl中docker
-```
+``` bash
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
 sudo apt-get install \
@@ -34,11 +34,11 @@ sudo apt-get install docker-ce
 ```
 export DOCKER_HOST=tcp://localhost:2375
 ```
-```
+``` bash
 sudo update-alternatives --config iptables
 ```
 输入这个后会显示以下内容
-```
+``` 
   Selection    Path                       Priority   Status
 ------------------------------------------------------------
 * 0            /usr/sbin/iptables-nft      20        auto mode
@@ -48,6 +48,6 @@ sudo update-alternatives --config iptables
 Press <enter> to keep the current choice[*], or type selection number: 
 ```
 这里输入1，然后再次启动docker即可
-```
+``` bash
 sudo service docker start
 ```
